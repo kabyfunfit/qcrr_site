@@ -4,7 +4,7 @@ import { Client, Databases, Functions, Account } from 'appwrite';
 const ENDPOINT = import.meta.env.VITE_APPWRITE_ENDPOINT;
 const PROJECT_ID = import.meta.env.VITE_APPWRITE_PROJECT_ID;
 
-// 2. Setup the connection
+// 2. Setup the connections
 const client = new Client();
 client
     .setEndpoint(ENDPOINT)

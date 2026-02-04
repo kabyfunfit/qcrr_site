@@ -27,7 +27,6 @@ const getSaturdayISO = () => {
 export default function RSVP() {
   const [step, setStep] = useState(1);
   const [loading, setLoading] = useState(false);
-  // REMOVED: can_reserve
   const [form, setForm] = useState({ name: '', email: '', is_member: false });
 
   const handleSubmit = async (e) => {
@@ -48,17 +47,18 @@ export default function RSVP() {
       if (check.total > 0) {
         // --- RETURNING PLAYER ---
         const doc = check.documents[0];
-        const currentLog = doc.attendance_log || [];
+        // CHANGED: Look at 'rsvp' instead of 'attendance_log'
+        const currentRsvps = doc.rsvp || []; 
 
-        if (!currentLog.includes(targetDate)) {
-          const newLog = [...currentLog, targetDate];
+        if (!currentRsvps.includes(targetDate)) {
+          const newRsvps = [...currentRsvps, targetDate];
           await databases.updateDocument(
             DB_ID,
             COLLECTION_ID,
             doc.$id,
             {
-              attendance_log: newLog,
-              is_member: form.is_member // Just update membership status
+              rsvp: newRsvps, // CHANGED: Update 'rsvp' attribute
+              is_member: form.is_member
             }
           );
         }
@@ -71,8 +71,9 @@ export default function RSVP() {
           {
             name: form.name,
             email: form.email,
-            attendance_log: [targetDate],
-            can_reserve: false, // Default to false since we removed the input
+            rsvp: [targetDate], // CHANGED: Initialize 'rsvp' attribute
+            attendance_log: [], // Keep attendance empty for now
+            can_reserve: false,
             is_member: form.is_member
           }
         );
@@ -143,7 +144,6 @@ export default function RSVP() {
                 <p className="text-xs text-gray-400">11333 E Southern Ave, Mesa, AZ</p>
              </div>
 
-             {/* UPDATED: Single Checkbox with Trial text */}
              <label className="flex items-center space-x-3 cursor-pointer">
                <input 
                  type="checkbox" 

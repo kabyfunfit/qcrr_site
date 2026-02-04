@@ -1,4 +1,4 @@
-import { Client, Databases, Functions, Account } from 'appwrite';
+import { Client, Account, Databases, Functions } from 'appwrite';
 
 // 1. Load variables from the .env file
 const ENDPOINT = import.meta.env.VITE_APPWRITE_ENDPOINT;
@@ -20,3 +20,6 @@ export const CONSTANTS = {
     DB_ID: import.meta.env.VITE_APPWRITE_DB_ID,
     RSVP_COLLECTION_ID: import.meta.env.VITE_COLLECTION_RSVP,
 };
+
+// 5. CRITICAL EXPORT (This fixes the "doesn't provide export named client" error)
+export { client };

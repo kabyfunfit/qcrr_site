@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import RSVP from './pages/RSVP';
-import Checkin from './pages/CheckIn';
+import Checkin from './pages/Checkin';
 import Roster from './pages/Roster';
 
 export default function App() {
@@ -9,14 +9,16 @@ export default function App() {
     <div className="min-h-screen bg-brand-black text-white font-sans">
       <main>
         <Routes>
-          {/* Default to the Roster page */}
-          <Route path="/" element={<Roster />} />
+          {/* The Home page is now RSVP again */}
+          <Route path="/" element={<RSVP />} />
 
-          {/* Other routes remains accessible via direct URL */}
-          <Route path="/rsvp" element={<RSVP />} />
+          {/* The Check-In Page */}
           <Route path="/checkin" element={<Checkin />} />
 
-          {/* Catch-all: Redirects random URLs back to Roster */}
+          {/* The Player Info page is moved to its own URL */}
+          <Route path="/roster" element={<Roster />} />
+
+          {/* Catch-all: Redirects random URLs back to Home (RSVP) */}
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

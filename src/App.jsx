@@ -1,7 +1,7 @@
 import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import RSVP from './pages/RSVP';
-import Checkin from './pages/Checkin';
+import Checkin from './pages/CheckIn';
 import Roster from './pages/Roster';
 
 export default function App() {

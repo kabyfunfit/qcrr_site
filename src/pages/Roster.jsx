@@ -96,7 +96,6 @@ const Roster = () => {
     <div className="w-full max-w-2xl mx-auto my-4 md:my-10 p-4 md:p-8 bg-slate-900 text-white rounded-xl shadow-2xl border border-slate-800">
       <header className="mb-6 md:mb-8 text-center md:text-left">
         <h1 className="text-3xl md:text-4xl font-black tracking-tight text-orange-500 uppercase leading-none">Player Information</h1>
-        <p className="text-slate-400 mt-2 text-sm italic">Confirmed Road Runners Players Only</p>
       </header>
 
       <form onSubmit={handleSubmit} className="space-y-6">
@@ -251,7 +250,7 @@ const Roster = () => {
               onChange={e => setFormData({...formData, scrimmageFeb28: e.target.checked})} 
             />
             <span className="text-xs md:text-sm font-medium group-hover:text-orange-400 transition-colors">
-              I am available for the Feb 28th scrimmage
+              I am available for the Feb 25th scrimmage
             </span>
           </label>
         </div>

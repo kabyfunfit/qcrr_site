@@ -42,14 +42,16 @@ export default function PitchDeck() {
 
   return (
     <>
-      {/* MOBILE PORTRAIT LOCK: Forces Landscape */}
-      <div className="fixed inset-0 z-[100] bg-black text-white flex-col items-center justify-center text-center px-8 hidden [@media(orientation:portrait)_and_(max-width:768px)]:flex">
-        <svg className="w-16 h-16 text-blue-500 mb-6 animate-pulse" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 10.5V6a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2v-4.5m10-4.5l-3-3m0 0l-3 3m3-3v9" transform="rotate(90 12 12)" />
-        </svg>
-        <h2 className="text-2xl font-black uppercase tracking-widest mb-4">Rotate Device</h2>
+      {/* MOBILE BLOCKER: Shows on any screen smaller than 768px (standard mobile/portrait tablet) */}
+      <div className="fixed inset-0 z-[100] bg-black text-white flex-col items-center justify-center text-center px-8 hidden max-md:flex">
+        <div className="mb-6 p-4 rounded-2xl bg-blue-900/20 border border-blue-500/30 shadow-[0_0_30px_rgba(37,99,235,0.1)]">
+          <svg className="w-12 h-12 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <h2 className="text-2xl font-black uppercase tracking-widest mb-4">Desktop Recommended</h2>
         <p className="text-blue-100/60 font-medium max-w-xs">
-          Please rotate your phone sideways to view this pitch deck.
+          This pitch deck is not designed for mobile devices. Please view on a desktop or laptop for the full experience.
         </p>
       </div>
 

@@ -25,7 +25,6 @@ const TierCard = ({ tier, idx, onSelect }) => {
     };
   }, []);
 
-  // Determine styles based on tier hierarchy
   let cardStyle = "";
   let buttonStyle = "";
 
@@ -130,7 +129,7 @@ export default function Tiers({ onSelect }) {
   ];
 
   return (
-    <div className="max-w-7xl w-full h-full min-h-0 flex flex-col items-center px-12 sm:px-16 md:px-8 py-2">
+    <div className="max-w-7xl w-full h-full min-h-0 flex flex-col items-center justify-center px-12 sm:px-16 md:px-8 py-2">
       <div className="text-center mb-2 md:mb-12 [@media(max-height:700px)]:mb-2 shrink-0">
         <h2 className="text-blue-500 font-black uppercase tracking-[0.3em] mb-1 md:mb-4 text-[10px] md:text-sm [@media(max-height:700px)]:mb-1">
           Partnership

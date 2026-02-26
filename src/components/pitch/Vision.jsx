@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Vision() {
   return (
-    <div className="max-w-7xl w-full h-full min-h-0 grid grid-cols-[45%_55%] gap-4 lg:gap-12 items-center px-2 md:px-8 py-2">
+    <div className="max-w-7xl w-full h-full min-h-0 grid grid-cols-[45%_55%] gap-4 lg:gap-12 items-center px-12 sm:px-16 md:px-8 py-2">
       
       {/* LEFT COLUMN: The Core Message */}
       <div className="text-left flex flex-col justify-center h-full min-h-0">

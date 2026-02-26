@@ -139,12 +139,19 @@ export default function PitchDeck() {
             ))}
           </div>
 
-          <div className="hidden md:block absolute inset-0 pointer-events-none z-[70]">
-            <button onClick={() => setCurrentPage(p => Math.max(0, p - 1))} className={`pointer-events-auto absolute left-6 top-1/2 -translate-y-1/2 p-4 rounded-full bg-black/40 border border-blue-900/30 text-white backdrop-blur-md transition-all ${currentPage === 0 ? 'opacity-0' : 'opacity-100 hover:bg-blue-900/60'}`}>
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" /></svg>
+          {/* Navigation Arrows */}
+          <div className="absolute inset-0 pointer-events-none z-[70]">
+            <button 
+              onClick={() => setCurrentPage(p => Math.max(0, p - 1))} 
+              className={`pointer-events-auto absolute left-2 md:left-6 top-1/2 -translate-y-1/2 p-2 md:p-4 rounded-full bg-black/40 border border-blue-900/30 text-white backdrop-blur-md transition-all ${currentPage === 0 ? 'opacity-0 pointer-events-none' : 'opacity-100 active:bg-blue-900/60 md:hover:bg-blue-900/60'}`}
+            >
+              <svg className="w-5 h-5 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M15 19l-7-7 7-7" /></svg>
             </button>
-            <button onClick={() => setCurrentPage(p => Math.min(pages.length - 1, p + 1))} className={`pointer-events-auto absolute right-6 top-1/2 -translate-y-1/2 p-4 rounded-full bg-black/40 border border-blue-900/30 text-white backdrop-blur-md transition-all ${currentPage === pages.length - 1 ? 'opacity-0' : 'opacity-100 hover:bg-blue-900/60'}`}>
-              <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" /></svg>
+            <button 
+              onClick={() => setCurrentPage(p => Math.min(pages.length - 1, p + 1))} 
+              className={`pointer-events-auto absolute right-2 md:right-6 top-1/2 -translate-y-1/2 p-2 md:p-4 rounded-full bg-black/40 border border-blue-900/30 text-white backdrop-blur-md transition-all ${currentPage === pages.length - 1 ? 'opacity-0 pointer-events-none' : 'opacity-100 active:bg-blue-900/60 md:hover:bg-blue-900/60'}`}
+            >
+              <svg className="w-5 h-5 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" /></svg>
             </button>
           </div>
         </div>
